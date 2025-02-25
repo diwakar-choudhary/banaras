@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patna tourism</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        :root {
+            --white-clr: #fff;
+            --black-clr: #000;
+            --text-clr: #777;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        section {
+            padding: 4rem 10rem;
+        }
+
+        .btn {
+            color: var(--black-clr);
+            background: var(--white-clr);
+            font-size: 1.4rem;
+            padding: 0.5rem 2.5rem;
+            border-radius: 2rem;
+            border: 2px solid var(--white-clr);
+            transition: all 0.2s ease-out;
+        }
+
+        .btn:hover {
+            color: var(--white-clr);
+            background: transparent;
+        }
+
+        .label {
+            font-size: 1.4rem;
+            color: var(--text-clr);
+            font-weight: 400;
+        }
+
+        .heading {
+            font-size: 6rem;
+            font-weight: 500;
+            letter-spacing: -2px;
+            white-space: nowrap;
+        }
+
+        body {
+            background: #f8f8fa;
+        }
+
+        /* ------------------------- home section starts hare ---------------- */
+
+        .home {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            padding: 2rem;
+
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+
+
+        }
+
+        .home .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .home .main h1 {
+            font-size: 9rem;
+            text-transform: none;
+            font-weight: 500;
+            max-width: 120rem;
+            letter-spacing: -3px;
+        }
+
+        .home .main p {
+            font-size: 1.6rem;
+        }
+
+        /* ---------------------------- achivment section starts here ---------------  */
+
+        .achivment {
+            width: 100%;
+            display: flex;
+            gap: 2rem;
+            transform: translate(0, -50%);
+        }
+
+        .achivment .box {
+            padding: 2rem;
+            background: var(--white-clr);
+            box-shadow: 0 10px 25px rgb(0 0 0 / 10%);
+            text-align: center;
+            flex-grow: 1;
+            border-radius: 2rem;
+        }
+
+        .achivment .box h5 {
+            font-size: 5rem;
+            font-weight: 500;
+        }
+
+        .achivment .box p {
+            font-size: 1.6rem;
+            color: var(--text-clr);
+        }
+
+        /* ---------------------------- achivment section ends here ---------------  */
+
+        /* ----------------------- best location section starts hare ----------------  */
+
+        .responsive-text {
+            display: flex;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .responsive-text .text-box {
+            max-width: 60rem;
+            margin-top: auto;
+        }
+
+        .responsive-text .text-box p {
+            font-size: 1.6rem;
+            color: var(--text-clr);
+            line-height: 1.8;
+        }
+
+        .location .images {
+            margin-top: 6rem;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 2rem;
+        }
+
+        .location .images .box {
+            height: 35rem;
+            width: 35rem;
+            flex-grow: 1;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 30%);
+
+        }
+
+        .location .images .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+
+
+        }
+
+        img:hover {
+            transition: 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        .location .images .box ul {
+            position: absolute;
+            left: 2rem;
+            bottom: 2rem;
+            list-style: none;
+        }
+
+        .location .images .box ul li {
+            font-size: 2rem;
+            font-weight: bolder;
+            color: red;
+        }
+
+        .location .images .box ul button {
+            border: none;
+            background-color: #eee;
+            letter-spacing: 2px;
+            font-family: Poppins;
+            font-weight: 700;
+            padding: 3px;
+
+        }
+
+
+        .location .images .box ul li:last-child {
+            color: var(--white-clr);
+        }
+
+        /* ----------------------- best location section ends hare ----------------  */
+
+        /* ----------------------- booking section starts hare ----------------  */
+
+        .booking {
+            width: 100%;
+            display: flex;
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+
+        .booking .image,
+        .booking .process {
+            width: 100%;
+        }
+
+        .booking .image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 30%);
+        }
+
+        .booking .image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .booking .process .box {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .booking .process .box span {
+            font-size: 2rem;
+            width: 55px;
+            height: 50px;
+            background: var(--white-clr);
+            display: grid;
+            place-items: center;
+            border-radius: 1rem;
+        }
+
+        .booking .process .box .text {
+            width: 100%;
+        }
+
+        .booking .process .box .text h4 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .booking .process .box .text p {
+            margin-top: 0.5rem;
+            font-size: 1.4rem;
+            color: var(--text-clr);
+        }
+
+        .booking .process .scale {
+            background: var(--white-clr);
+            border-radius: 1.5rem;
+            scale: 1.01;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 2%);
+        }
+
+        .booking .process .scale span {
+            background: #f2f7ff;
+        }
+
+        /* ----------------------- booking section ends hare ----------------  */
+
+        /* packages section starts here  */
+
+        .packages .images {
+            margin-top: 4rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .packages .images .box {
+            width: 100%;
+            height: 50rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 10%);
+            position: relative;
+        }
+
+        .packages .images .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .packages .images .box .top {
+            position: absolute;
+            top: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            color: var(--white-clr);
+            list-style: none;
+        }
+
+        .packages .images .box .top li {
+            font-size: 1.3rem;
+            padding: 5px 10px;
+            border-radius: 3rem;
+            background: rgb(255 255 255 / 10%);
+            backdrop-filter: blur(10px);
+        }
+
+        .packages .images .box .top li i {
+            color: #fdcc0d;
+        }
+
+        .packages .images .box .bottom {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            width: calc(100% - 2rem);
+            background: rgb(255 255 255 / 10%);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .packages .images .box .bottom time {
+            color: #ddd;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .packages .images .box .bottom ul {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            list-style: none;
+            margin-top: 0.5rem;
+            font-size: 1.6rem;
+            color: var(--white-clr);
+        }
+
+        /* packages section ends here  */
+
+        /* blogs section starts here  */
+
+        .blog {
+            width: 100%;
+        }
+
+        .blog .container {
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog .container .box {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 30px rgb(0 0 0 / 10%);
+        }
+
+        .blog .container .box img {
+            width: 100%;
+            height: 35rem;
+            border-radius: 1rem;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .blog .container .box .content {
+            padding: 1.5rem;
+        }
+
+        .blog .container .box .content time {
+            font-size: 1.4rem;
+            color: var(--text-clr);
+        }
+
+        .blog .container .box .content h3 {
+            font-size: 3rem;
+            margin: 1.5rem 0;
+            font-weight: 600;
+        }
+
+        .blog .container .box .content p {
+            color: var(--text-clr);
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
+
+        .blog .action {
+            width: 100%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .blog .action a {
+            font-size: 1.2rem;
+            padding: 1rem 4rem;
+            background: var(--black-clr);
+            color: var(--white-clr);
+            display: inline-block;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog .action a:hover {
+            box-shadow: 0 8px 10px rgb(0 0 0 / 20%);
+            transform: translate(0, -5px);
+        }
+
+        /* blogs section ends here  */
+
+
+
+        /* ----------------------- media query section starts hare --------------------- */
+
+        @media (max-width: 1065px) {
+            .heading {
+                white-space: wrap;
+            }
+        }
+
+        @media (max-width: 957px) {
+            html {
+                font-size: 52%;
+            }
+
+            .booking {
+                flex-direction: column;
+            }
+
+            .packages .images {
+                grid-template-columns: 1fr;
+            }
+
+            .location .images {
+                flex-direction: column;
+            }
+
+            .location .images .box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 795px) {
+            .home .main h1 {
+                font-size: 6rem;
+            }
+
+            .location .images {
+                flex-direction: column;
+            }
+
+            .location .images .box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 706px) {
+            section {
+                padding: 4rem;
+            }
+
+            .home header i {
+                display: inline-block;
+            }
+
+            .home header .actions i {
+                margin-left: 1rem;
+            }
+
+
+
+            .achivment {
+                transform: translate(0, 0);
+                flex-wrap: wrap;
+            }
+
+            .responsive-text {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .location .images {
+                flex-direction: column;
+            }
+
+            .location .images .box {
+                width: 100%;
+            }
+
+            /* footer {
+    padding: 4rem;
+  } */
+        }
+
+        @media (max-width: 546px) {
+            .heading {
+                font-size: 4rem;
+            }
+
+            .home .main h1 {
+                font-size: 3.3rem;
+                letter-spacing: 0;
+            }
+
+
+            .location .images {
+                flex-direction: column;
+            }
+
+            .location .images .box {
+                width: 100%;
+            }
+        }
+
+
+
+        /* ----------------------- media query section ends hare --------------------- */
+    </style>
+</head>
+
+<body>
+    <!-- home section starts hare  -->
+
+    <section class="home">
+        <video autoplay loop muted plays-inline class="background-video">
+            <source src="patna-vid.mp4" type="video/mp4">
+        </video>
+        <div class="main">
+            <h1>Patna: The Capital City Of Bihar</h1>
+            <p>Exploring Patna is an unforgettable adventure.</p>
+
+
+        </div>
+    </section>
+
+    <!-- home section ends hare  -->
+
+    <!-- achivment section starts hare  -->
+
+    <section class="achivment">
+        <div class="box">
+            <h5>25L+</h5>
+            <p>total Population</p>
+        </div>
+        <div class="box">
+            <h5>20+</h5>
+            <p>Tourist Places</p>
+        </div>
+        <div class="box">
+            <h5>500+</h5>
+            <p>Institutions</p>
+        </div>
+        <div class="box">
+            <h5>4.7</h5>
+            <p>average rating</p>
+        </div>
+    </section>
+
+    <!-- achivment section ends hare  -->
+
+    <!-- best location section starts hare  -->
+
+    <section class="location">
+        <div class="responsive-text">
+            <div class="heading-box">
+                <h6 class="label">best location</h6>
+                <h2 class="heading">Patna, Bihar</h2>
+            </div>
+            <div class="text-box">
+                <p>
+                    Discover the Breathtaking beauty of Patna's Monuments.
+                    Explore the lush rainforests, temples, and historical places.
+                </p>
+            </div>
+        </div>
+
+        <div class="images">
+            <div class="box">
+                <img src="golghar.jpeg" alt="" />
+                <ul>
+                    <li>gol ghar</li>
+                    <button><a href="patna_details.html">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="mahavir-mandir.jpeg" alt="" />
+                <ul>
+                    <li>Mahavir Mandir</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="bihar-museum.jpeg" alt="" />
+                <ul>
+                    <li>Bihar Museum</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="buddha-smriti.jpeg" alt="" />
+                <ul>
+                    <li>Buddha Smriti Park</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+        </div>
+        <div class="images">
+            <div class="box">
+                <img src="gandhi-ghat.jpeg" alt="" />
+                <ul>
+                    <li>Gandhi Ghat</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="kangan-ghat.jpeg" alt="" />
+                <ul>
+                    <li>Kangan Ghat</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="marine-drive.png" alt="" />
+                <ul>
+                    <li>Marine Drive</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+            <div class="box">
+                <img src="patna-sahib.jpeg" alt="" />
+                <ul>
+                    <li>Patna Sahib</li>
+                    <button><a href="http://">View Details</a></button>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- best location section ends hare  -->
+
+    <!-- booking process seciton starts here  -->
+
+    <section class="booking">
+        <div class="image">
+            <img src="ashoka-convention.jpeg" alt="" />
+        </div>
+
+        <div class="process">
+            <h6 class="label">how it works</h6>
+            <h2 class="heading">one click for you</h2>
+
+            <div class="box scale">
+                <span>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <div class="text">
+                    <h4>find your destination</h4>
+                    <p>
+                        Uncover the rich cultural heritage of Patna's  ethnic
+                        groups.
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <span>
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+                <div class="text">
+                    <h4>book a ticket</h4>
+                    <p>
+                        Immerse yourself in Patna's unique blend of traditional and
+                        modern culture.
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <span>
+                    <i class="fa-regular fa-money-bill-1"></i>
+                </span>
+                <div class="text">
+                    <h4>make payment</h4>
+                    <p>
+                        From relaxation to exhilation, Patna has something for every
+                        kind of traveler.
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <span>
+                    <i class="fa-regular fa-map"></i>
+                </span>
+                <div class="text">
+                    <h4>explore destination</h4>
+                    <p>
+                        Dive into the crystal - clear waters, trek through the jungle, or
+                        surf the waves of Ganga.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- booking process seciton ends here  -->
+
+
+
+
+    <!-- hotel section starts here -->
+
+    <!-- hotel section Ends here -->
+
+
+    <!-- packages section starts hare  -->
+
+    <section class="packages">
+        <div class="responsive-text">
+            <div class="heading-box">
+                <h6 class="label">tour packages</h6>
+                <h2 class="heading">our tourist destination</h2>
+            </div>
+            <div class="text-box">
+                <p>
+                    Experience the magic of Patna's diverse landscapes. Discover
+                    ancient temples, vibrant festivals, and warm hospitality.
+                </p>
+            </div>
+        </div>
+        <div class="images">
+            <div class="box">
+                <img src="package1.jpeg" alt="" />
+                <ul class="top">
+                    <li>7 days</li>
+                    <li><i class="fa solid fa-star"></i> 4.7</li>
+                </ul>
+                <div class="bottom">
+                    <time datetime="2024-10-27">25 April</time>
+                    <ul>
+                        <li>Patna tour packages</li>
+                        <li>$205</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <img src="package2.jpg" alt="" />
+                <ul class="top">
+                    <li>5 days</li>
+                    <li><i class="fa solid fa-star"></i> 4.9</li>
+                </ul>
+                <div class="bottom">
+                    <time datetime="2024-10-27">21 January</time>
+                    <ul>
+                        <li>Nalanda tour packages</li>
+                        <li>$190</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <img src="package3.jpg" alt="" />
+                <ul class="top">
+                    <li>3 days</li>
+                    <li><i class="fa solid fa-star"></i> 4.9</li>
+                </ul>
+                <div class="bottom">
+                    <time datetime="2024-10-27">12 December</time>
+                    <ul>
+                        <li>solo tour packages</li>
+                        <li>$230</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- packages section ends hare  -->
+
+    <!-- blog section starts hare  -->
+
+    <section class="blog">
+        <h6 class="label">our blog</h6>
+        <h1 class="heading">our travel memories</h1>
+        <div class="container">
+            <div class="box">
+                <img src="blog1.jpeg" alt="" />
+                <div class="content">
+                    <time datetime="2024-10-30">Nov 30, 2024</time>
+                    <h3>2025 Travel trends - what you need to know</h3>
+                    <p>
+                        Discover the Breathtaking beauty of Patna's Monuments.
+                        Explore the lush rainforests, temples, and historical places.
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="blog2.jpg" alt="" />
+                <div class="content">
+                    <time datetime="2024-11-03">Dec 12, 2024</time>
+                    <h3>
+                        Nalanda adventure is a new attraction for tourists visiting garut
+                    </h3>
+                    <p>
+                        Dive into the crystal - clear waters, trek through the jungle, or
+                        surf the waves of Ganga.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <a href="#">view more</a>
+        </div>
+    </section>
+
+    <!-- blog section ends hare  -->
+
+    <script>
+        const menubar = document.querySelector(".fa-bars");
+        const close = document.querySelector(".fa-close");
+        const navbar = document.querySelector("#navbar");
+
+        menubar.addEventListener("click", () => {
+            navbar.classList.add("active");
+        });
+
+
+        close.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        })
+    </script>
+</body>
+
+</html>
